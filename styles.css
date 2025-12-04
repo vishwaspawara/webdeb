@@ -33,8 +33,7 @@ header {
     white-space: nowrap;
 }
 
-.btn-account,
-.btn-settings {
+.btn-account {
     background: none;
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: white;
@@ -44,19 +43,19 @@ header {
     transition: background-color 0.2s;
 }
 
-.btn-account:hover,
-.btn-settings:hover {
+.btn-account:hover {
     background-color: rgba(255, 255, 255, 0.1);
-}
-
-.btn-settings {
-    font-size: 1.2rem;
-    padding: 0.3rem 0.8rem;
 }
 
 footer {
     background-color: #333;
     height: 60px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    position: relative;
 }
 
 main {

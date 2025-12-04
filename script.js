@@ -1,18 +1,23 @@
+// function to update date and time 
 function updateDateTime() {
     const now = new Date();
-    const options = { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false // Changed to 24-hour format
-    };
-    document.getElementById('datetime').textContent = now.toLocaleString(undefined, options);
+
+    // Extract individual parts
+    const day = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are 0-11
+    const year = now.getFullYear();
+
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+    // Build the final string in dd-mm-yyyy hh:mm:ss format
+    const formatted = `${day}-${month}-${year} ${hours}:${minutes}:${seconds}`;
+
+    document.getElementById('datetime').textContent = formatted;
 }
 
 // Update immediately and then every second
 updateDateTime();
 setInterval(updateDateTime, 1000);
+

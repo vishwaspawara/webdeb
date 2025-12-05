@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Music Player</title>
+<style>
+
+body { 
+margin:0; 
+font-family:sans-serif; 
+background:#121212; 
+color:white; 
+text-align:center; 
+}
+
+ul { 
+list-style:none; 
+padding:0; 
+}
+
+li { 
+padding:10px; 
+cursor:pointer; 
+}
+
+li:hover { 
+background:#333; 
+}
+
+audio { 
+width:90%; 
+margin-top:20px; 
+}
+
+</style>
+</head>
+<body>
+<h2>Music Player</h2>
+<ul id="playlist">
+<li data-file="song1.mp3">Song 1</li>
+<li data-file="song2.mp3">Song 2</li>
+<li data-file="song3.mp3">Song 3</li>
+</ul>
+
+<audio id="player" controls></audio>
+
+<script>
+const player = document.getElementById("player");
+
+document.querySelectorAll("#playlist li").forEach(item => {
+		item.onclick = () => {
+		player.src = "/app/music/" + item.dataset.file;
+		player.play();
+		};
+});
+</script>
+</body>
+</html>
+

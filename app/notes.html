@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Notes</title>
+<style>
+body { 
+margin: 0; 
+background:#1d1d1d; 
+color: white; 
+font-family: sans-serif; 
+}
+
+textarea {
+width:100vw;
+height:100vh;
+display:flex;
+flex-direction:column;
+padding:10px;
+box-sizing:border-box;
+overflow: hidden;
+}
+
+</style>
+</head>
+<body>
+<div>
+<textarea id="note" placeholder="vish was hereyour notes here..."></textarea>
+</div>
+<script>
+const box = document.getElementById("note");
+
+box.value = localStorage.getItem("notes_app") || "";
+
+box.addEventListener("input", () => {
+localStorage.setItem("notes_app", box.value);
+});
+</script>
+</body>
+</html>
+

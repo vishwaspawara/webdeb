@@ -62,3 +62,87 @@ main {
     flex: 1;
     padding: 2rem;
 }
+
+/* Floating Window Styles */
+.floating-window {
+    display: none;
+    position: fixed;
+    top: 60px; /* Below the header */
+    left: 0;
+    width: 50%;
+    height: calc(100% - 120px); /* Account for header and footer */
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+/* Floating window main container */
+.floating-window {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Window header section */
+.win-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #e0e0e0;
+    min-height: 50px;
+}
+
+/* App title section */
+.app-title h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Window controls container */
+.win-control {
+    display: flex;
+    gap: 10px;
+}
+
+/* Common button styles */
+.win-control button {
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+    transition: all 0.2s;
+}
+
+.win-control button:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Close button specific styles */
+.close-btn:hover {
+    background-color: #ff4444;
+    color: white;
+    border-color: #ff4444;
+}
+
+/* Content area */
+.content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    background-color: #fff;
+}
